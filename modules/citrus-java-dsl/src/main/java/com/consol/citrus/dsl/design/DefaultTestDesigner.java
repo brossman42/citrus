@@ -54,7 +54,7 @@ import java.util.*;
 public class DefaultTestDesigner implements TestDesigner {
 
     /** This builders test case */
-    private final TestCase testCase = new TestCase();
+    private final TestCase testCase;
 
     /** This runners test context */
     private TestContext context;
@@ -67,11 +67,20 @@ public class DefaultTestDesigner implements TestDesigner {
 
     /** Default constructor */
     public DefaultTestDesigner() {
+        this(new TestCase());
         testCase.setVariableDefinitions(variables);
 
         testClass(this.getClass());
         name(this.getClass().getSimpleName());
         packageName(this.getClass().getPackage().getName());
+    }
+
+    /**
+     * Constructor initializing test case.
+     * @param testCase
+     */
+    protected DefaultTestDesigner(TestCase testCase) {
+        this.testCase = testCase;
     }
 
     /**
@@ -805,4 +814,11 @@ public class DefaultTestDesigner implements TestDesigner {
         return context;
     }
 
+    /**
+     * Sets the test context.
+     * @param context
+     */
+    public void setTestContext(TestContext context) {
+        this.context = context;
+    }
 }

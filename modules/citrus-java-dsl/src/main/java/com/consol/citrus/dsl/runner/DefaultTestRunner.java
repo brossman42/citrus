@@ -54,7 +54,7 @@ public class DefaultTestRunner implements TestRunner {
     private static Logger log = LoggerFactory.getLogger(DefaultTestRunner.class);
 
     /** This builders test case */
-    private final TestCase testCase = new TestCase();
+    private final TestCase testCase;
 
     /** This runners test context */
     private TestContext context;
@@ -67,9 +67,18 @@ public class DefaultTestRunner implements TestRunner {
 
     /** Default constructor */
     public DefaultTestRunner() {
+        this(new TestCase());
         testClass(this.getClass());
         name(this.getClass().getSimpleName());
         packageName(this.getClass().getPackage().getName());
+    }
+
+    /**
+     * Constructor initializing test case.
+     * @param testCase
+     */
+    protected DefaultTestRunner(TestCase testCase) {
+        this.testCase = testCase;
     }
 
     /**
@@ -536,6 +545,23 @@ public class DefaultTestRunner implements TestRunner {
      */
     public TestContext getTestContext() {
         return context;
+    }
+
+    /**
+     * Sets the test context.
+     * @param context
+     */
+    public void setTestContext(TestContext context) {
+        this.context = context;
+    }
+
+    /**
+     * Gets the value of the applicationContext property.
+     *
+     * @return the applicationContext
+     */
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
     }
 
     /**

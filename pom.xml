@@ -48,8 +48,8 @@
     <module>modules/citrus-docker</module>
     <module>modules/citrus-rmi</module>
     <module>modules/citrus-jmx</module>
-    <module>modules/citrus-arquillian</module>
     <module>modules/citrus-restdocs</module>
+    <module>modules/citrus-arquillian</module>
     <module>modules/citrus-java-dsl</module>
     <module>modules/citrus-integration</module>
   </modules>
@@ -132,8 +132,8 @@
   </prerequisites>
 
   <scm>
-    <connection>scm:git@github.com:christophd/citrus.git</connection>
-    <developerConnection>scm:git://github.com/christophd/citrus.git</developerConnection>
+    <connection>scm:git:git@github.com:christophd/citrus.git</connection>
+    <developerConnection>scm:git:git@github.com/christophd/citrus.git</developerConnection>
     <url>http://github.com/christophd/citrus.git</url>
   </scm>
 
@@ -737,7 +737,7 @@
 
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19</version>
+          <version>2.19.1</version>
           <configuration>
             <systemProperties>
               <property>
@@ -763,7 +763,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.19</version>
+          <version>2.19.1</version>
           <executions>
             <execution>
               <id>integration-tests</id>
@@ -908,7 +908,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>jaxb2-maven-plugin</artifactId>
-          <version>1.5</version>
+          <version>2.2</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>

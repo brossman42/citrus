@@ -19,7 +19,16 @@
     <schemaBindings>
       <package name="com.consol.citrus.model.config.http"/>
       <nameXmlTransform>
-        <elementName prefix="Http" suffix="Definition" />
+        <elementName prefix="Http" suffix="Model" />
+      </nameXmlTransform>
+    </schemaBindings>
+  </bindings>
+
+  <bindings schemaLocation="com/consol/citrus/schema/citrus-http-testcase.xsd">
+    <schemaBindings>
+      <package name="com.consol.citrus.model.testcase.http"/>
+      <nameXmlTransform>
+        <elementName suffix="Model" />
       </nameXmlTransform>
     </schemaBindings>
   </bindings>
